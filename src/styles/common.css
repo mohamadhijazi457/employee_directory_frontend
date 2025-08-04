@@ -1,0 +1,215 @@
+
+   .btn {
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    font-weight: 500;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    cursor: pointer;
+    outline: none;
+    border: none;
+  }
+  .btn-primary {
+    background-color: #2563eb;
+    color: #fff;
+  }
+  .btn-primary:hover {
+    background-color: #1e40af;
+  }
+  .btn-secondary {
+    background-color: #e5e7eb;
+    color: #1f2937;
+  }
+  .btn-secondary:hover {
+    background-color: #d1d5db;
+  }
+
+  .input {
+    border: 1px solid #d1d5db;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    font-size: 1rem;
+  }
+  .input:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 2px rgba(59,130,246,0.2);
+    outline: none;
+  }
+  
+  .modal-backdrop {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0,0,0,0.5);
+    backdrop-filter: blur(4px);
+    z-index: 50;
+  }
+  .modal-container {
+    background-color: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 54rem;
+    padding: 1.5rem;
+    position: relative;
+    animation: fadeIn 0.2s ease-in-out;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to   { opacity: 1; transform: scale(1); }
+  }
+  
+
+  .form {
+    width: 100%;
+    max-width: 40rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  /* Grid for inputs */
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  @media (min-width: 768px) {
+    .form-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  /* Labels */
+  .form-label {
+    display: block;
+    font-size: 0.875rem;
+    color: #4b5563;
+    margin-bottom: 0.25rem;
+  }
+  /* Actions (buttons) */
+  .form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.75rem;
+  }
+  
+  /* Fixed field widths (but responsive) */
+  .form .input,
+  .form select {
+    width: 20rem;
+    max-width: 100%;
+  }
+  
+  /* ----------------------
+     Table Styles
+     ---------------------- */
+  .employee-table-container {
+    padding: 1.5rem;
+    background-color: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+  .employee-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .employee-table th,
+  .employee-table td {
+    padding: 0.75rem;
+    text-align: left;
+    font-size: 0.875rem;
+  }
+  .employee-table thead {
+    background-color: #f3f4f6;
+  }
+  .employee-table tbody tr:nth-child(even) {
+    background-color: #f9fafb;
+  }
+  .actions-cell {
+    text-align: right;
+  }
+  /* Per-row action buttons */
+  .action-btn {
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+    cursor: pointer;
+    margin-left: 0.5rem;
+    border: none;
+  }
+  .action-btn.edit {
+    background-color: #3b82f6;
+    color: #fff;
+  }
+  .action-btn.edit:hover {
+    background-color: #2563eb;
+  }
+  .action-btn.delete {
+    background-color: #ef4444;
+    color: #fff;
+  }
+  .action-btn.delete:hover {
+    background-color: #dc2626;
+  }
+  
+  /* ----------------------
+     Search Bar Styles
+     ---------------------- */
+  .search-bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  @media (min-width: 640px) {
+    .search-bar {
+      flex-direction: row;
+    }
+  }
+  /* Smaller search input */
+  .search-bar .input {
+    width: 12rem;
+    max-width: 100%;
+  }
+  
+  /* Load more button container */
+  .load-more-button {
+    margin-top: 1rem;
+    text-align: center;
+  }
+  
+  /* ----------------------
+     Responsive Overrides
+     ---------------------- */
+  /* On very small screens, let inputs fill */
+  @media (max-width: 640px) {
+    .form .input,
+    .form select {
+      width: 100%;
+    }
+  }
+  
+/* Replace or augment your existing .modal-backdrop rule with: */
+.modal-backdrop {
+    position: fixed;          /* pin to viewport, not container */
+    top:    0;                /* explicitly fill top-to-bottom */
+    right:  0;
+    bottom: 0;
+    left:   0;
+    width:  100vw;            /* cover full viewport width */
+    height: 100vh;            /* cover full viewport height */
+    
+    display: flex;            /* center the inner modal */
+    align-items: center;
+    justify-content: center;
+    
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    
+    z-index: 9999;            /* sit above everything else */
+  }
+  
